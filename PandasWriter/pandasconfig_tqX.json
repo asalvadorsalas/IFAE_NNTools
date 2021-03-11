@@ -1,0 +1,406 @@
+{
+    "Region": [
+        {
+            "Selection": "jets_n==4&&bjets_n==3",
+            "Name": "c1l4jex3bex" 
+        }, 
+        {
+            "Selection": "jets_n==4&&bjets_n==4",
+            "Name": "c1l4jex4bin" 
+        },
+        {
+            "Selection": "jets_n==5&&bjets_n==3",
+            "Name": "c1l5jex3bex" 
+        },
+        {
+            "Selection": "jets_n==5&&bjets_n>=4",
+            "Name": "c1l5jex4bin"
+        },
+        {
+            "Selection": "jets_n>=6&&bjets_n==3",
+            "Name": "c1l6jin3bex" 
+        },
+        {
+            "Selection": "jets_n>=6&&bjets_n>=4",
+            "Name": "c1l6jin4bin"
+        } 
+    ], 
+    "Sample": [
+        {
+            "NtupleFiles": ["ttbarlight"],
+            "Name": "ttbarlight", 
+            "Group": "t#bar{t} + light", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_ttbar_v0_merged"
+        }, 
+        {
+            "NtupleFiles": ["ttbarcc"],
+            "Name": "ttc",
+            "Group": "t#bar{t} + #geq1c", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_ttbar_v0_merged"
+        }, 
+        {
+            "NtupleFiles": ["ttbarbb"],
+            "Name": "ttb", 
+            "Group": "t#bar{t} + #geq1b", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_ttbar_v0_merged"
+        },
+        {
+            "NtupleFiles": ["Wtocb"],
+            "Name": "Wtocb", 
+            "Group": "W#rightarrowcb", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_wcb_v1_merged"
+        },
+        {
+            "NtupleFiles": ["Singletop"],
+            "Name": "Singletop", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_singletop_simple_v2_merged"
+        },
+        {
+            "NtupleFiles": ["topEW"],
+            "Name": "topEW", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_rare_v0_merged"
+        }, 
+        {
+            "NtupleFiles": ["ttH"],
+            "Name": "ttH", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_rare_v0_merged"
+        }, 
+        {
+            "NtupleFiles": ["ttHtH"],
+            "Name": "tH", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_rare_tH_v1_merged"
+        }, 
+        {
+            "NtupleFiles": ["Wjets22light"],
+            "Name": "Wjetslight", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_wjets_v2_merged"
+        }, 
+        {
+            "NtupleFiles": ["Zjets22light"],
+            "Name": "Zjetslight", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_zjets_v0_merged"
+        },
+        {
+            "NtupleFiles": ["Dibosons"],
+            "Name": "Dibosons", 
+            "Type": "BACKGROUND",
+            "Path": "/nfs/at3/scratch2/orlando/FCNC-offline/FCNC-Analysis_output_Hplus_full_sim_rare_v0_merged"
+        },
+        {
+            "NtupleFiles": ["uHbWm"],
+            "Name": "uX_125", 
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqH_merged"
+        },
+        {
+            "NtupleFiles": ["uHbWp"],
+            "Name": "ubarX_125", 
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqH_merged"
+        },
+        {
+            "NtupleFiles": ["cHbWm"],
+            "Name": "cX_125", 
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqH_merged"
+        },
+        {
+            "NtupleFiles": ["cHbWp"],
+            "Name": "cbarX_125", 
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqH_merged"
+        },
+                {
+            "NtupleFiles": ["uS_S20"],
+            "Name": "uX_20",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S20"],
+            "Name": "ubarX_20",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S20"],
+            "Name": "cX_20",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S20"],
+            "Name": "cbarX_20",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S30"],
+            "Name": "uX_30",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S30"],
+            "Name": "ubarX_30",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S30"],
+            "Name": "cX_30",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S30"],
+            "Name": "cbarX_30",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S40"],
+            "Name": "uX_40",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S40"],
+            "Name": "ubarX_40",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S40"],
+            "Name": "cX_40",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S40"],
+            "Name": "cbarX_40",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S50"],
+            "Name": "uX_50",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S50"],
+            "Name": "ubarX_50",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S50"],
+            "Name": "cX_50",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S50"],
+            "Name": "cbarX_50",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S60"],
+            "Name": "uX_60",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S60"],
+            "Name": "ubarX_60",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S60"],
+            "Name": "cX_60",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S60"],
+            "Name": "cbarX_60",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S70"],
+            "Name": "uX_70",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S70"],
+            "Name": "ubarX_70",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S70"],
+            "Name": "cX_70",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S70"],
+            "Name": "cbarX_70",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S80"],
+            "Name": "uX_80",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S80"],
+            "Name": "ubarX_80",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S80"],
+            "Name": "cX_80",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S80"],
+            "Name": "cbarX_80",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S90"],
+            "Name": "uX_90",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S90"],
+            "Name": "ubarX_90",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S90"],
+            "Name": "cX_90",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S90"],
+            "Name": "cbarX_90",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S100"],
+            "Name": "uX_100",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S100"],
+            "Name": "ubarX_100",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S100"],
+            "Name": "cX_100",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S100"],
+            "Name": "cbarX_100",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S120"],
+            "Name": "uX_120",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S120"],
+            "Name": "ubarX_120",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S120"],
+            "Name": "cX_120",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S120"],
+            "Name": "cbarX_120",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S140"],
+            "Name": "uX_140",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S140"],
+            "Name": "ubarX_140",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S140"],
+            "Name": "cX_140",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S140"],
+            "Name": "cbarX_140",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },        {
+            "NtupleFiles": ["uS_S160"],
+            "Name": "uX_160",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["ubarS_S160"],
+            "Name": "ubarX_160",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cS_S160"],
+            "Name": "cX_160",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        },
+        {
+            "NtupleFiles": ["cbarS_S160"],
+            "Name": "cbarX_160",
+            "Type": "SIGNAL",
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
+        }
+    ], 
+    "Job": {
+        "NtuplePaths": "/nfs/at3/scratch2/cpeng/FCNC-offline/fit-inputs_pflow_v2", 
+        "NtupleName": "tree", 
+	    "MCweight": "139000*nomWeight_weight_btag*nomWeight_weight_jvt*nomWeight_weight_leptonSF*nomWeight_weight_mc*nomWeight_weight_norm*nomWeight_weight_pu"
+    }
+}
