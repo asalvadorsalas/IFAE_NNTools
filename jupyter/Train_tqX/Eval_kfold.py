@@ -7,31 +7,27 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import font_manager as fm, rcParams
 import matplotlib.ticker as tck
-from sklearn.metrics import roc_auc_score
-from joblib import dump, load
-
-import numpy as np
-import pandas as pd
-from sklearn.utils import _safe_indexing, check_random_state
-from itertools import chain
-from sklearn.utils import shuffle
-from scipy.stats import rv_discrete
-
 plt.style.use('classic')
 rcParams['figure.facecolor'] = '1'
 rcParams['patch.force_edgecolor'] = False
 fpath = os.path.join(rcParams["datapath"], "/nfs/pic.es/user/s/salvador/arial.ttf")
 fbipath = os.path.join(rcParams["datapath"], "/nfs/pic.es/user/s/salvador/ArialBoldItalic.ttf")
 
+from sklearn.metrics import roc_auc_score
+from joblib import dump, load
+
 def ATLAS(ylims,perc):
-    #gets axis coordinates in units of %
+    #For plots ets axis coordinates in units of %
     width=ylims[1]-ylims[0]
     return ylims[0]+width*perc
 
-from joblib import load, dump
-inputdir = "./tXqML/Models/NewTrain3_"
+from IFAE_NNTools.TrainingFrame import *
+from IFAE_NNTools.WeightedStandardScaler import *
+
+inputdir = "./tXqML/Models/Test_"
 user = "salvador"
 pandainput = "pandas_tqXv2.feather"
+sets = ["q","u","c"]
 
 reframelep_phi = True
 reframelep_eta = True
@@ -55,285 +51,14 @@ reframelep_eta = True
 
 print("Running eval for",inputdir,pandainput)
 
-if not os.path.isdir(outputdir):
-    print("Making output dir",outputdir)
-    os.makedirs(outputdir, exist_ok=True)
+for i in sets:
+    if not os.path.isdir(outputdir+"/tr_"+i):
+        print("Making output dir",outputdir+"/tr_"+i)
+        os.makedirs(outputdir+"/tr_"+i, exist_ok=True)
 
 if not os.path.isdir("/tmp/"+user):
     print ("Making tmp dir")
     os.mkdir("/tmp/"+user)
-
-
-def variance(values, weights=None, axis=0):
-    """ returns weighted (biased) variance
-        values: array/series with values
-        weights: array/series with weights (same dimension as values)
-    """
-    
-    average = np.average(values, weights=weights, axis=axis)
-    variance = np.average((values-average)**2, weights=weights, axis=axis)
-    return variance
-
-class TrainingFrame:
-    """Class that provides the tXq data for machine learning"""
-    
-    def __init__(self, pandasframe, feature_names, backgroundclass=-1):
-        """Constructor to set data frame, features columns name and class label for background"""
-        self.pandasframe = pandasframe
-        self.backgroundclass = backgroundclass
-        self.foldvar = "event_number"
-        self.feature_names = feature_names
-        self.random_state = 123456789
-        self.mask = -1
-    
-    def get_pandasframe_mask(self, region, masses):
-        """return a mask (true/false) for the specified options
-           region: string name of the region
-           masses: string "all" or list of masses to return
-        """
-        if region!="":
-            regionseries = self.pandasframe.region==region
-        else:
-            regionseries = pd.Series([True]*self.pandasframe.shape[0],index=self.pandasframe.index)
-        
-        if masses=="all":
-            return regionseries
-        else:
-            issignalseries = self.pandasframe.process.str.contains("X_"+str(masses[0]))
-            for imass in masses[1:]:
-                issignalseries = (issignalseries | self.pandasframe.process.str.contains("X_"+str(imass)) )
-        
-        isbackgroundseries =~ self.pandasframe.process.str.contains("X_")
-            
-        return regionseries & (issignalseries | isbackgroundseries)
-                                    
-    def get_features_classes_weights(self,region,masses,addmass,absoluteWeight):
-        """returns features data frame, classes series and weights series
-           region: string, region of the events to be returned
-           masses: string "all" or list specifying the masses to return
-           addmass: bool, if True the mass is added to the feature matrix (parameterised ML training)
-           abosluteWeight: bool, if True the absolute value of weight will be returned (default)
-        """
-        
-        self.mask = self.get_pandasframe_mask(region,masses) #filters by region and masses
-        if addmass:
-            features = self.pandasframe[self.mask].loc[:,self.feature_names+["X_mass"]].copy()
-            classes = self.pandasframe[self.mask].process.apply(lambda proc:self.backgroundclass if not "X_" in proc else int(proc.split("X_")[1]))
-
-        else:
-            features = self.pandasframe[self.mask].loc[:,self.feature_names].copy() 
-            classes = self.pandasframe[self.mask].process.apply(lambda proc:self.backgroundclass if not "X_" in proc else 1)
-
-        
-        weights = self.pandasframe[self.mask].weight
-        if absoluteWeight:
-            weights = abs(weights)
-        
-        features.reset_index(inplace = True, drop = True)
-        weights.reset_index(inplace = True, drop = True)
-        classes.reset_index(inplace = True, drop = True)
-        return features, classes, weights
-        
-    def get_split_series(self,rows):
-        """return a series of integers 0,1,2 which sample of training, testing and evaluation belongs to."""
-        #splitdf = pd.DataFrame([True]*rows)
-        #splitdf = splitdf.apply(lambda x: 0 if x.name%10 in [0,1] else 1 if x.name%10 in [2,3] else 2 if x.name%10 in [4,5] else 3 if x.name%10 in [6,7] else 4, axis=1)
-        #splitdf = splitdf.apply(lambda x: x.name%2, axis=1)
-        #return #pd.Series(splitdf)
-        #pd.Series([i%2 for i in range(rows)])
-        return pd.Series([i%5 for i in range(rows)])
-    
-    
-    def prepare(self, masses="all", region="", addmass=False, absoluteWeight=True,ifold=0):
-        """returns feature matrices, class labels and weights for training, testing and evaluation
-           region: string, region of the events to be returned
-           masses: string "all" or list specifying the masses filter
-           addmass: bool if True the mass column is added to the feature matrix
-           absoluteWeight: bool, if true the absolute value of the weights will be returned
-        """
-        features, classes, weights = self.get_features_classes_weights(region,masses,addmass,absoluteWeight)
-        split_series = self.pandasframe[self.mask][self.foldvar]%5  #self.get_split_series(classes.shape[0])
-        
-        trainset = np.where( (split_series==ifold%5) | (split_series==(ifold+1)%5) | (split_series==(ifold+2)%5) )[0]
-        valset   = np.where( split_series==(ifold+3)%5 )[0]
-        #trainset = np.where( split_series==ifold )[0]
-        #valset   = np.where( split_series==ifold+1 )[0]
-        testset  = np.where( split_series==(ifold+4)%5 )[0]
-        
-        rng = check_random_state(self.random_state)
-        rng.shuffle(trainset)
-        rng.shuffle(valset)
-        rng.shuffle(testset)
-        
-        return list(chain.from_iterable((_safe_indexing(a,trainset),
-                                         _safe_indexing(a,valset),
-                                         _safe_indexing(a,testset)) for a in [features,classes,weights]))
-
-class WeightScaler():
-    """Class that makes the integral of the signal/bkg weights be equal, for several categories the distribution as a function of the class variable is flattened"""
-    def __init__(self, backgroundclass=-1,norm=0.5):
-        """
-        backgroundlcass: label for bgk
-        norm: value for the integral of weights
-        """
-        self.backgroundclass = backgroundclass
-        self.norm = norm
-        self.scale_={}
-        
-    def fit(self,X,y,w):
-        """
-        learns the sum of weights for all classes and calculates a scale factor for each class so that the sum of weights for bkg is 'norm' and the sum of weights for signal is flattened with tota integral 'norm' 
-        X: feature matrix, to keep structure (ignored)
-        y: series of class labels
-        w: Series of sample weights
-        """
-        classes=sorted(np.unique(y))
-        classes.remove(self.backgroundclass)
-        
-        differences={}
-        if len(classes)>1: #more than 1 signal
-            #set the differences between signal points
-            differences={classes[i]:(classes[i+1]-classes[i-1])/2 for i in range(1,len(classes)-1) if classes[i]>0}
-            differences[classes[0]]=classes[1]-classes[0]
-            differences[classes[-1]]=classes[-1]-classes[-2]
-            diffsum=sum(differences.values())
-            print (differences, "->", diffsum)
-        else:
-            differences[classes[0]]=1
-            diffsum=1
-        
-        for classlabel in classes:
-            sumweight=w[y==classlabel].sum()
-            self.scale_[classlabel]=differences[classlabel]/(2*sumweight*diffsum)
-        sumweight=w[y==self.backgroundclass].sum()
-        self.scale_[self.backgroundclass]=self.norm/sumweight
-        return
-        
-    def transform(self,X,y,w,copy=None):
-        """
-        Transforms the sum of weights for all classes applying the corresponding scale of each label
-        """
-        
-        for classlabel in self.scale_:
-            w[y==classlabel]*=self.scale_[classlabel]
-        return X,y,w          
-
-
-class BackgroundRandomizer():
-        """
-        Class that assigns random signal mass hypotheses to bkg training data with the PDF learned from signal for parameterised training
-        """
-        
-        def __init__(self,backgroundclass=-1,verbose=False):
-            """
-            backgroundclass: label for background
-            verbose: print debug information if True
-            """
-            
-            self.backgroundclass = backgroundclass
-            self.verbose = verbose
-            self.randomseed = 123456789
-            self.xk = []
-            self.pk = []
-        
-        def fit(self, X, y, w):
-            """
-            determines the mass PDF for signal events
-            X: features
-            y: parameter for signal, background class for bkg
-            w: weights for events (ignored)
-            """
-            self.xk = []
-            self.pk = []
-            signalsum = np.sum(w[y!=self.backgroundclass])
-            for name, group in w.groupby(y):
-                print("name",name, "group",group,"sum",group.sum())
-                if name!=self.backgroundclass:
-                    self.xk.append((-1)*name)
-                    self.pk.append(group.sum()/signalsum)
-            if self.verbose:
-                print("Signal PDF:",self.xk,self.pk)
-        
-        def transform(self, X, y, w):
-            """
-            randomly assigns signal labels according to fitted pdf
-            X: features
-            y: parameter for signal, background class for bkg
-            w: weights for events. Bkg weights are going to be set to have same sum as the weights of the signal label assigned
-            """
-            
-            np.random.seed(seed=self.randomseed+len(y)) #not to have the same random seed for test and train
-            custm=rv_discrete(values=(self.xk,self.pk))
-            y.loc[y==self.backgroundclass]=custm.rvs(size=len(y[y==self.backgroundclass].index))
-            X.X_mass=y.abs()
-            #labels=y.apply(lambda val: val if val!=self.backgroundclass else custm.rvs())
-            #X.X_mass=labels.abs()
-            if self.verbose and not w is None:
-                print("the following is the difference between + and - mass")
-                print((w*((y>0)-0.5)*2).groupby(y.abs()).sum())
-                print("the following is the sum of weights")
-                print(w.groupby(y).sum())
-
-            return X, y, w
-
-class WeightedStandardScaler():
-    """Class which transforms all features to have average 0 and variance 1, same as sklearn StandardScaler but taking weights into account"""
-    
-    def __init__(self):
-        self.scale_ = None
-        self.mean_ = None
-        self.var_ = None
-        
-    def fit(self, X, y, w):
-        """
-        Compute the mean and std to be used for scaling
-        X: feature matrix
-        y: labels (ignored)
-        w: event weights
-        """
-            
-        self.mean_ = np.average(X,axis=0,weights=w)
-        self.var_ = variance(X,weights=w)
-        self.scale_ = np.sqrt(self.var_)
-    
-    def transform(self, X, y, w):
-        """
-        Performs standarization by centering and scaling features
-        X: feature matrix
-        y: labels (ignored)
-        w: event weights (ignored)
-        """
-        
-        X -= self.mean_
-        print(X)
-        X /= self.scale_
-        print(X)
-        
-        nonzerovariance = np.where(self.scale_!=0)[0]
-        print("Non zero variance columns!",X.shape,nonzerovariance)
-        return X.iloc[:,nonzerovariance],y,w
-    
-    def export(self, X, y, w, path, classlabel):
-        """
-        Saves scaler information as json for lwnn c++ package
-        """
-        dump(self,outputdir+'/wss_'+classlabel+'.joblib')
-        with open(path,"w+") as outfile:
-            print("Saving info in",path)
-            outfile.write('{\n')
-            outfile.write('  "inputs": [\n')
-            for feat,mean,scale in zip(X.columns,self.mean_,self.scale_):
-                outfile.write('    {\n')
-                outfile.write('      "name": "'+feat+'" ,\n')
-                outfile.write('      "offset": '+str(-mean)+" ,\n")
-                outfile.write('       "scale":'+str(1./scale)+" \n")
-                #print (feat,"\t",-mean,1./scale)
-                if feat==X.columns[-1]: outfile.write('    }\n')
-                else: outfile.write('    },\n')
-            outfile.write('  ],\n')
-            outfile.write('  "class_labels": ["'+classlabel+'"]\n')
-            outfile.write('}')    
-        print (X.shape,X.mean(), X.var())
 
 def getseparation(nu,n,bins):
     print("getsepa")
@@ -359,8 +84,6 @@ labels = {'all': "Inclusive","c1l4jex3bex": "4j 3b","c1l4jex4bin": r'4j 4b', "c1
                   "c1l6jin3bex": r'$\geq$6j'+" 3b","c1l6jin4bin": r'$\geq$6j$\geq$4b'}
 regions= ['all'             ,'c1l4jex3bex'         ,'c1l4jex4bin'               , 'c1l5jex3bex'        , 'c1l5jex4bin',
                   'c1l6jin3bex'                   ,'c1l6jin4bin']
-sets = ["u","c"]
-sets = ["q"]
 for training in sets:
     bookAUC[training]={}
     bookSep[training]={}
@@ -411,7 +134,7 @@ for training in sets:
     procf_col = []
     eventf_col = []
     models_all = []
-    for ifold in [0,1,2,3,4]:
+    for ifold in [0,1,2,3,4]: #,1,2,3,4
         tf_ = tframe.prepare(masses="all",addmass=True,ifold=ifold)
         X_eval,y_eval,w_eval = [tf_[1],tf_[4],tf_[7]]
         #X_eval,y_eval,w_eval = [tf_[2],tf_[5],tf_[8]]
