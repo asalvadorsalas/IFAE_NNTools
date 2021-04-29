@@ -100,25 +100,25 @@
             "NtupleFiles": ["uHbWm"],
             "Name": "uX_125", 
             "Type": "SIGNAL",
-            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqH_merged"
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
         },
         {
             "NtupleFiles": ["uHbWp"],
             "Name": "ubarX_125", 
             "Type": "SIGNAL",
-            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqH_merged"
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
         },
         {
             "NtupleFiles": ["cHbWm"],
             "Name": "cX_125", 
             "Type": "SIGNAL",
-            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqH_merged"
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
         },
         {
             "NtupleFiles": ["cHbWp"],
             "Name": "cbarX_125", 
             "Type": "SIGNAL",
-            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqH_merged"
+            "Path": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples_tqX_merged"
         },
                 {
             "NtupleFiles": ["uS_S20"],
@@ -401,6 +401,6 @@
     "Job": {
         "NtuplePaths": "/nfs/at3/scratch2/cpeng/FCNC-offline/fit-inputs_pflow_v2", 
         "NtupleName": "tree", 
-	    "MCweight": "139000*nomWeight_weight_btag*nomWeight_weight_jvt*nomWeight_weight_leptonSF*nomWeight_weight_mc*nomWeight_weight_norm*nomWeight_weight_pu"
+	    "MCweight": "nomWeight_weight_btag*nomWeight_weight_jvt*nomWeight_weight_leptonSF*nomWeight_weight_mc*nomWeight_weight_norm*nomWeight_weight_pu"
     }
 }
