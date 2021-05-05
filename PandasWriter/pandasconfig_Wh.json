@@ -39,6 +39,36 @@
             "Type": "BACKGROUND",
             "Selection": "(HF_SimpleClassification == 1) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))"
         },
+	{
+            "NtupleFiles": ["db_mc16a","db_mc16d","db_mc16e","wjets_mc16a","wjets_mc16d","wjets_mc16e","zjets_mc16a","zjets_mc16d","zjets_mc16e"],
+            "Name": "bosonic", 
+            "Type": "BACKGROUND"
+        },
+	{
+            "NtupleFiles": ["st_sc_mc16a","st_sc_mc16d","st_sc_mc16e","tZ_mc16a","tZ_mc16d","tZ_mc16e","tH_mc16a_AFII","tH_mc16d_AFII","tH_mc16e_AFII","ttll_mc16a","ttll_mc16d","ttll_mc16e","tWZ_mc16a","tWZ_mc16d","tWZ_mc16e"],
+            "Name": "othertop", 
+            "Type": "BACKGROUND"
+        },
+	{
+            "NtupleFiles": ["st_tc_mc16a","st_tc_mc16d","st_tc_mc16e"],
+            "Name": "st_tchan", 
+            "Type": "BACKGROUND"
+        },
+	{
+            "NtupleFiles": ["Wt_mc16a","Wt_mc16d","Wt_mc16e"],
+            "Name": "st_wchan", 
+            "Type": "BACKGROUND"
+        },
+	{
+            "NtupleFiles": ["ttH_PP8_mc16a","ttH_PP8_mc16d","ttH_PP8_mc16e"],
+            "Name": "ttH", 
+            "Type": "BACKGROUND"
+        },
+	{
+            "NtupleFiles": ["ttW_mc16a","ttW_mc16d","ttW_mc16e"],
+            "Name": "ttW", 
+            "Type": "BACKGROUND"
+        },
         {
             "NtupleFiles": ["hp250_mc16a_AFII","hp250_mc16d_AFII","hp250_mc16e_AFII"],
             "Name": "Hp250",
@@ -126,7 +156,7 @@
         }
     ], 
     "Job": {
-        "NtuplePaths": "/nfs/at3/scratch/salvador/HplusWH/run/Output_00/4ji2bi", 
+        "NtuplePaths": "/nfs/at3/scratch/salvador/HplusWH/runtest/Output_t_00/4ji2bi", 
         "NtupleName": "nominal_Loose", 
 	    "MCweight": "weight_normalise*weight_pileup*weight_mc*weight_leptonSF*weight_bTagSF_DL1r_Continuous*weight_jvt*(randomRunNumber<=311481 ? 36207.66 : (randomRunNumber<=340453 ? 44307.4 : 58450.1))*(ejets_2015_DL1r==1 || ejets_2016_DL1r==1 || ejets_2017_DL1r==1 || ejets_2018_DL1r==1 || mujets_2015_DL1r==1 || mujets_2016_DL1r==1 || mujets_2017_DL1r==1 || mujets_2018_DL1r==1)"
     }
