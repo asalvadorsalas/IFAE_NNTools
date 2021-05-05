@@ -3,6 +3,13 @@ import json,os
 import pandas as pd
 from root_pandas import read_root
 
+def getRWstring(rw_str,reg):
+    rw_str = rw_str.replace("#","4j") if "4jex" in reg["Name"] else \
+             rw_str.replace("#","5j") if "5jex" in reg["Name"] else \
+             rw_str.replace("#","6j")
+    print(rw_str)
+    return rw_str
+
 class HpcbAnalysis:
     """Class that provides the tqX analysis pandas datasets"""
 
