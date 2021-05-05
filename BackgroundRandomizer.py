@@ -15,6 +15,7 @@ class BackgroundRandomizer():
             self.backgroundclass = backgroundclass
             self.verbose = verbose
             self.randomseed = 123456789
+            self.massvar = "X_mass"
             self.xk = []
             self.pk = []
         
@@ -47,9 +48,8 @@ class BackgroundRandomizer():
             np.random.seed(seed=self.randomseed+len(y)) #not to have the same random seed for test and train
             custm=rv_discrete(values=(self.xk,self.pk))
             y.loc[y==self.backgroundclass]=custm.rvs(size=len(y[y==self.backgroundclass].index))
-            X.X_mass=y.abs()
+            X[self.massvar]=y.abs()
             #labels=y.apply(lambda val: val if val!=self.backgroundclass else custm.rvs())
-            #X.X_mass=labels.abs()
             if self.verbose and not w is None:
                 print("the following is the difference between + and - mass")
                 print((w*((y>0)-0.5)*2).groupby(y.abs()).sum())

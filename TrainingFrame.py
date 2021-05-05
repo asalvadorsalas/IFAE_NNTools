@@ -17,7 +17,8 @@ class TrainingFrame:
         self.feature_names = feature_names
         self.random_state = 123456789
         self.mask = -1
-    
+        self.signalprefix = "X_"
+        self.massvar = "X_"
     def get_pandasframe_mask(self, region, masses):
         """return a mask (true/false) for the specified options
            region: string name of the region
@@ -30,12 +31,12 @@ class TrainingFrame:
         
         if masses=="all":
             return regionseries
-        else:
-            issignalseries = self.pandasframe.process.str.contains("X_"+str(masses[0]))
+        else: #This wont work for Hpmass style of process
+            issignalseries = self.pandasframe.process.str.contains(self.signalprefix+str(masses[0]))
             for imass in masses[1:]:
-                issignalseries = (issignalseries | self.pandasframe.process.str.contains("X_"+str(imass)) )
+                issignalseries = (issignalseries | self.pandasframe.process.str.contains(self.signalprefix+str(imass)) )
         
-        isbackgroundseries =~ self.pandasframe.process.str.contains("X_")
+        isbackgroundseries =~ self.pandasframe.process.str.contains(self.signalprefix)
             
         return regionseries & (issignalseries | isbackgroundseries)
                                     
@@ -49,12 +50,12 @@ class TrainingFrame:
         
         self.mask = self.get_pandasframe_mask(region,masses) #filters by region and masses
         if addmass:
-            features = self.pandasframe[self.mask].loc[:,self.feature_names+["X_mass"]].copy()
-            classes = self.pandasframe[self.mask].process.apply(lambda proc:self.backgroundclass if not "X_" in proc else int(proc.split("X_")[1]))
+            features = self.pandasframe[self.mask].loc[:,self.feature_names+[self.massvar+"mass"]].copy()
+            classes = self.pandasframe[self.mask].process.apply(lambda proc:self.backgroundclass if not self.signalprefix in proc else int(proc.split(self.signalprefix)[1]))
 
         else:
             features = self.pandasframe[self.mask].loc[:,self.feature_names].copy() 
-            classes = self.pandasframe[self.mask].process.apply(lambda proc:self.backgroundclass if not "X_" in proc else 1)
+            classes = self.pandasframe[self.mask].process.apply(lambda proc:self.backgroundclass if not self.signalprefix in proc else 1)
 
         
         weights = self.pandasframe[self.mask].weight
