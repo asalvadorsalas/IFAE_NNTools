@@ -29,6 +29,9 @@ inputdir = "./Train"
 user = "salvador"
 pandainput = "pandas_Hpcb_v2.feather"
 
+reframelep_phi = True
+reframelep_eta = True
+
 masses = [60,70,80,90,100,110,120,130,140,150,160]
 
 ifold = 0
@@ -47,8 +50,8 @@ if not os.path.isdir("/tmp/"+user):
 
 bookAUC = {}
 
-labels = {'all': "Inclusive","6jin4bin": r'$\geq$6j$\geq$4b'}
-regions= ['6jin4bin']
+labels = {'all': "Inclusive","c1l4jex3bex": r'5j3b',"c1l4jex4bin": r'4j4b',"c1l5jex3bex": r'5j3b',"c1l5jex4bin": r'4j$\geq$4b',"c1l6jex3bex": r'6j3b',"c1l6jex4bin": r'6j$\geq$4b',"c1l7jin3bex": r'$\geq7$j3b',"c1l7jin4bin": r'$\geq7$j$\geq$4b'}
+regions= ['all','c1l4jex3bex','c1l4jex4bin','c1l5jex3bex','c1l5jex4bin','c1l6jex3bex','c1l6jex4bin','c1l7jin3bex','c1l7jin4bin']
 
 for region in regions:
     bookAUC[region]={}
@@ -56,8 +59,10 @@ for region in regions:
 df_mc = pd.read_feather("/tmp/"+user+"/"+pandainput) #2:53
 print (df_mc.shape)
 print (df_mc.columns.unique())
+print (df_mc.region.unique())
+print (df_mc.process.unique())
 
-cfeatures = []
+features = []
 for i in range(0,6):
     features+=['jet'+str(i)+'_pt_bord', 'jet'+str(i)+'_eta_bord', 'jet'+str(i)+'_phi_bord', 'jet'+str(i)+'_m_bord', 'jet'+str(i)+'_btagw_discrete_bord']
 features+=["lep1_pt","lep1_eta","lep1_phi","met","met_phi"]
