@@ -50,7 +50,7 @@ if not os.path.isdir("/tmp/"+user):
 
 bookAUC = {}
 
-labels = {'all': "Inclusive","c1l4jex3bex": r'5j3b',"c1l4jex4bin": r'4j4b',"c1l5jex3bex": r'5j3b',"c1l5jex4bin": r'4j$\geq$4b',"c1l6jex3bex": r'6j3b',"c1l6jex4bin": r'6j$\geq$4b',"c1l7jin3bex": r'$\geq7$j3b',"c1l7jin4bin": r'$\geq7$j$\geq$4b'}
+labels = {'all': "Inclusive","c1l4jex3bex": r'4j3b',"c1l4jex4bin": r'4j4b',"c1l5jex3bex": r'5j3b',"c1l5jex4bin": r'5j$\geq$4b',"c1l6jex3bex": r'6j3b',"c1l6jex4bin": r'6j$\geq$4b',"c1l7jin3bex": r'$\geq7$j3b',"c1l7jin4bin": r'$\geq7$j$\geq$4b'}
 regions= ['all','c1l4jex3bex','c1l4jex4bin','c1l5jex3bex','c1l5jex4bin','c1l6jex3bex','c1l6jex4bin','c1l7jin3bex','c1l7jin4bin']
 
 for region in regions:
