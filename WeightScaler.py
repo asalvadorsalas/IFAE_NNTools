@@ -15,7 +15,7 @@ class WeightScaler():
         
     def fit(self,X,y,w):
         """
-        learns the sum of weights for all classes and calculates a scale factor for each class so that the sum of weights for bkg is 'norm' and the sum of weights for signal is flattened with tota integral 'norm' 
+        learns the sum of weights for all classes and calculates a scale factor for each class so that the sum of weights for bkg is 'norm' and the sum of weights for signal is flattened with total integral 'norm' 
         X: feature matrix, to keep structure (ignored)
         y: series of class labels
         w: Series of sample weights
