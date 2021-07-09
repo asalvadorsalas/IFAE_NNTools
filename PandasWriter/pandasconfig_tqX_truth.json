@@ -1,0 +1,378 @@
+{
+    "Region": [
+        {
+            "Selection": "nJets==4&&nBTags_DL1r_60==3",
+            "Name": "c1l4jex3bex" 
+        }, 
+        {
+            "Selection": "nJets==4&&nBTags_DL1r_60==4",
+            "Name": "c1l4jex4bin" 
+        },
+        {
+            "Selection": "nJets==5&&nBTags_DL1r_60==3",
+            "Name": "c1l5jex3bex" 
+        },
+        {
+            "Selection": "nJets==5&&nBTags_DL1r_60>=4",
+            "Name": "c1l5jex4bin"
+        },
+        {
+            "Selection": "nJets==6&&nBTags_DL1r_60==3",
+            "Name": "c1l6jex3bex" 
+        },
+        {
+            "Selection": "nJets==6&&nBTags_DL1r_60>=4",
+            "Name": "c1l6jex4bin"
+        },
+        {
+            "Selection": "nJets>=7&&nBTags_DL1r_60==3",
+            "Name": "c1l7jin3bex" 
+        },
+        {
+            "Selection": "nJets>=7&&nBTags_DL1r_60>=4",
+            "Name": "c1l7jin4bin"
+        } 
+    ], 
+    "Sample": [
+	{   "NtupleFiles": ["Data"],
+	    "Name": "data",
+	    "Type": "DATA"
+	},
+        {
+            "NtupleFiles": ["ttbarlight"],
+            "Name": "ttbarlight", 
+            "Group": "t#bar{t} + light", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        }, 
+        {
+            "NtupleFiles": ["ttbarcc"],
+            "Name": "ttc",
+            "Group": "t#bar{t} + #geq1c", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        }, 
+        {
+            "NtupleFiles": ["ttbarbb"],
+            "Name": "ttb", 
+            "Group": "t#bar{t} + #geq1b", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["Wtocb"],
+            "Name": "Wtocb", 
+            "Group": "W#rightarrowcb", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["Singletop"],
+            "Name": "Singletop", 
+            "Type": "BACKGROUND"
+        },
+        {
+            "NtupleFiles": ["topEW"],
+            "Name": "topEW", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["ttH"],
+            "Name": "ttH", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["ttHtH"],
+            "Name": "tH", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["Wjets22light"],
+            "Name": "Wjets", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["Zjets22light"],
+            "Name": "Zjets", 
+            "Type": "BACKGROUND"
+        },
+        {
+            "NtupleFiles": ["Dibosons"],
+            "Name": "Dibosons", 
+            "Type": "BACKGROUND"
+        },
+        {
+            "NtupleFiles": ["uHbWm"],
+            "Name": "uX_125", 
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["uHbWp"],
+            "Name": "ubarX_125", 
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cHbWm"],
+            "Name": "cX_125", 
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cHbWp"],
+            "Name": "cbarX_125", 
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["uS_S20_mc16a_AFII","uS_S20_mc16d_AFII","uS_S20_mc16e_AFII"],
+            "Name": "uX_20",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S20_mc16a_AFII","ubarS_S20_mc16d_AFII","ubarS_S20_mc16e_AFII"],
+            "Name": "ubarX_20",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S20_mc16a_AFII","cS_S20_mc16d_AFII","cS_S20_mc16e_AFII"],
+            "Name": "cX_20",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S20_mc16a_AFII","cbarS_S20_mc16d_AFII","cbarS_S20_mc16e_AFII"],
+            "Name": "cbarX_20",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S30_mc16a_AFII","uS_S30_mc16d_AFII","uS_S30_mc16e_AFII"],
+            "Name": "uX_30",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S30_mc16a_AFII","ubarS_S30_mc16d_AFII","ubarS_S30_mc16e_AFII"],
+            "Name": "ubarX_30",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S30_mc16a_AFII","cS_S30_mc16d_AFII","cS_S30_mc16e_AFII"],
+            "Name": "cX_30",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S30_mc16a_AFII","cbarS_S30_mc16d_AFII","cbarS_S30_mc16e_AFII"],
+            "Name": "cbarX_30",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S40_mc16a_AFII","uS_S40_mc16d_AFII","uS_S40_mc16e_AFII"],
+            "Name": "uX_40",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S40_mc16a_AFII","ubarS_S40_mc16d_AFII","ubarS_S40_mc16e_AFII"],
+            "Name": "ubarX_40",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S40_mc16a_AFII","cS_S40_mc16d_AFII","cS_S40_mc16e_AFII"],
+            "Name": "cX_40",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S40_mc16a_AFII","cbarS_S40_mc16d_AFII","cbarS_S40_mc16e_AFII"],
+            "Name": "cbarX_40",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S50_mc16a_AFII","uS_S50_mc16d_AFII","uS_S50_mc16e_AFII"],
+            "Name": "uX_50",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S50_mc16a_AFII","ubarS_S50_mc16d_AFII","ubarS_S50_mc16e_AFII"],
+            "Name": "ubarX_50",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S50_mc16a_AFII","cS_S50_mc16d_AFII","cS_S50_mc16e_AFII"],
+            "Name": "cX_50",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S50_mc16a_AFII","cbarS_S50_mc16d_AFII","cbarS_S50_mc16e_AFII"],
+            "Name": "cbarX_50",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S60_mc16a_AFII","uS_S60_mc16d_AFII","uS_S60_mc16e_AFII"],
+            "Name": "uX_60",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S60_mc16a_AFII","ubarS_S60_mc16d_AFII","ubarS_S60_mc16e_AFII"],
+            "Name": "ubarX_60",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S60_mc16a_AFII","cS_S60_mc16d_AFII","cS_S60_mc16e_AFII"],
+            "Name": "cX_60",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S60_mc16a_AFII","cbarS_S60_mc16d_AFII","cbarS_S60_mc16e_AFII"],
+            "Name": "cbarX_60",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S70_mc16a_AFII","uS_S70_mc16d_AFII","uS_S70_mc16e_AFII"],
+            "Name": "uX_70",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S70_mc16a_AFII","ubarS_S70_mc16d_AFII","ubarS_S70_mc16e_AFII"],
+            "Name": "ubarX_70",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S70_mc16a_AFII","cS_S70_mc16d_AFII","cS_S70_mc16e_AFII"],
+            "Name": "cX_70",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S70_mc16a_AFII","cbarS_S70_mc16d_AFII","cbarS_S70_mc16e_AFII"],
+            "Name": "cbarX_70",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S80_mc16a_AFII","uS_S80_mc16d_AFII","uS_S80_mc16e_AFII"],
+            "Name": "uX_80",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S80_mc16a_AFII","ubarS_S80_mc16d_AFII","ubarS_S80_mc16e_AFII"],
+            "Name": "ubarX_80",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S80_mc16a_AFII","cS_S80_mc16d_AFII","cS_S80_mc16e_AFII"],
+            "Name": "cX_80",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S80_mc16a_AFII","cbarS_S80_mc16d_AFII","cbarS_S80_mc16e_AFII"],
+            "Name": "cbarX_80",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S90_mc16a_AFII","uS_S90_mc16d_AFII","uS_S90_mc16e_AFII"],
+            "Name": "uX_90",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S90_mc16a_AFII","ubarS_S90_mc16d_AFII","ubarS_S90_mc16e_AFII"],
+            "Name": "ubarX_90",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S90_mc16a_AFII","cS_S90_mc16d_AFII","cS_S90_mc16e_AFII"],
+            "Name": "cX_90",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S90_mc16a_AFII","cbarS_S90_mc16d_AFII","cbarS_S90_mc16e_AFII"],
+            "Name": "cbarX_90",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S100_mc16a_AFII","uS_S100_mc16d_AFII","uS_S100_mc16e_AFII"],
+            "Name": "uX_100",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S100_mc16a_AFII","ubarS_S100_mc16d_AFII","ubarS_S100_mc16e_AFII"],
+            "Name": "ubarX_100",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S100_mc16a_AFII","cS_S100_mc16d_AFII","cS_S100_mc16e_AFII"],
+            "Name": "cX_100",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S100_mc16a_AFII","cbarS_S100_mc16d_AFII","cbarS_S100_mc16e_AFII"],
+            "Name": "cbarX_100",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S120_mc16a_AFII","uS_S120_mc16d_AFII","uS_S120_mc16e_AFII"],
+            "Name": "uX_120",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S120_mc16a_AFII","ubarS_S120_mc16d_AFII","ubarS_S120_mc16e_AFII"],
+            "Name": "ubarX_120",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S120_mc16a_AFII","cS_S120_mc16d_AFII","cS_S120_mc16e_AFII"],
+            "Name": "cX_120",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S120_mc16a_AFII","cbarS_S120_mc16d_AFII","cbarS_S120_mc16e_AFII"],
+            "Name": "cbarX_120",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S140_mc16a_AFII","uS_S140_mc16d_AFII","uS_S140_mc16e_AFII"],
+            "Name": "uX_140",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S140_mc16a_AFII","ubarS_S140_mc16d_AFII","ubarS_S140_mc16e_AFII"],
+            "Name": "ubarX_140",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S140_mc16a_AFII","cS_S140_mc16d_AFII","cS_S140_mc16e_AFII"],
+            "Name": "cX_140",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S140_mc16a_AFII","cbarS_S140_mc16d_AFII","cbarS_S140_mc16e_AFII"],
+            "Name": "cbarX_140",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S150_mc16a_AFII","uS_S150_mc16d_AFII","uS_S150_mc16e_AFII"],
+            "Name": "uX_150",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S150_mc16a_AFII","ubarS_S150_mc16d_AFII","ubarS_S150_mc16e_AFII"],
+            "Name": "ubarX_150",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S150_mc16a_AFII","cS_S150_mc16d_AFII","cS_S150_mc16e_AFII"],
+            "Name": "cX_150",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S150_mc16a_AFII","cbarS_S150_mc16d_AFII","cbarS_S150_mc16e_AFII"],
+            "Name": "cbarX_150",
+            "Type": "SIGNAL"
+        },        {
+            "NtupleFiles": ["uS_S160_mc16a_AFII","uS_S160_mc16d_AFII","uS_S160_mc16e_AFII"],
+            "Name": "uX_160",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["ubarS_S160_mc16a_AFII","ubarS_S160_mc16d_AFII","ubarS_S160_mc16e_AFII"],
+            "Name": "ubarX_160",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cS_S160_mc16a_AFII","cS_S160_mc16d_AFII","cS_S160_mc16e_AFII"],
+            "Name": "cX_160",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["cbarS_S160_mc16a_AFII","cbarS_S160_mc16d_AFII","cbarS_S160_mc16e_AFII"],
+            "Name": "cbarX_160",
+            "Type": "SIGNAL"
+        }
+    ], 
+    "Job": {
+        "NtuplePaths": "/nfs/at3/scratch/salvador/HplusWH/runtqX/Output_cut_00/nocuts",
+        "NtupleName": "nominal_Loose", 
+	    "MCweight": "weight_normalise*weight_pileup*weight_mc*weight_leptonSF*weight_bTagSF_DL1r_Continuous*weight_jvt*(randomRunNumber<=311481 ? 36207.66 : (randomRunNumber<=340453 ? 44307.4 : 58450.1))*(ejets_2015_DL1r==1 || ejets_2016_DL1r==1 || ejets_2017_DL1r==1 || ejets_2018_DL1r==1 || mujets_2015_DL1r==1 || mujets_2016_DL1r==1 || mujets_2017_DL1r==1 || mujets_2018_DL1r==1)"
+    }
+}
