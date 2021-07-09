@@ -6,7 +6,8 @@ from root_pandas import read_root
 def getRWstring(rw_str,reg):
     rw_str = rw_str.replace("#","4j") if "4jex" in reg["Name"] else \
              rw_str.replace("#","5j") if "5jex" in reg["Name"] else \
-             rw_str.replace("#","6j")
+             rw_str.replace("#","6j") if "6jex" in reg["Name"] else \
+             ""
     print(rw_str)
     return rw_str
 
@@ -47,8 +48,8 @@ class tqXAnalysis:
         print(samples)
         for sample in self.config["Sample"]:
             if len(samples)==0 or sample['Name'] in samples:
-                if sample['Name']=='data':
-                    continue
+                #if sample['Name']=='data':
+                #    continue
                 for region in self.config["Region"]:
                     print(region)
                     if len(regions)==0 or region['Name'] in regions:
@@ -57,7 +58,7 @@ class tqXAnalysis:
                         if "Selection" in sample:
                             selection="("+selection+") && ("+sample["Selection"]+")"
 
-                        mcweight=""
+                        mcweight="1.0"
                         RW=""
                         if sample['Name']!='data':
                             mcweight=self.mcweight

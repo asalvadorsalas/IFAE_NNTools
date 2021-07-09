@@ -17,15 +17,27 @@
             "Name": "c1l5jex4bin"
         },
         {
-            "Selection": "jets_n>=6&&bjets_n==3",
-            "Name": "c1l6jin3bex" 
+            "Selection": "jets_n==6&&bjets_n==3",
+            "Name": "c1l6jex3bex" 
         },
         {
-            "Selection": "jets_n>=6&&bjets_n>=4",
-            "Name": "c1l6jin4bin"
+            "Selection": "jets_n==6&&bjets_n>=4",
+            "Name": "c1l6jex4bin"
+        },
+        {
+            "Selection": "jets_n>=7&&bjets_n==3",
+            "Name": "c1l7jin3bex" 
+        },
+        {
+            "Selection": "jets_n>=7&&bjets_n>=4",
+            "Name": "c1l7jin4bin"
         } 
     ], 
     "Sample": [
+	{   "NtupleFiles": ["Data"],
+	    "Name": "data",
+	    "Type": "DATA"
+	},
         {
             "NtupleFiles": ["ttbarlight"],
             "Name": "ttbarlight", 
@@ -75,12 +87,12 @@
             "Type": "BACKGROUND"
         }, 
         {
-            "NtupleFiles": ["Wjets"],
+            "NtupleFiles": ["Wjets22light"],
             "Name": "Wjets", 
             "Type": "BACKGROUND"
         }, 
         {
-            "NtupleFiles": ["Zjets"],
+            "NtupleFiles": ["Zjets22light"],
             "Name": "Zjets", 
             "Type": "BACKGROUND"
         },
@@ -109,7 +121,7 @@
             "Name": "cbarX_125", 
             "Type": "SIGNAL"
         },
-                {
+        {
             "NtupleFiles": ["uS_S20"],
             "Name": "uX_20",
             "Type": "SIGNAL"
@@ -359,7 +371,7 @@
         }
     ], 
     "Job": {
-        "NtuplePaths": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Run/L2Ntuples",
+        "NtuplePaths": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Ntuples",
         "NtupleName": "tree", 
 	    "MCweight": "nomWeight_weight_btag*nomWeight_weight_jvt*nomWeight_weight_leptonSF*nomWeight_weight_mc*nomWeight_weight_norm*nomWeight_weight_pu"
     }
