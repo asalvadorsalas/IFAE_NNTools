@@ -23,25 +23,33 @@
             "Name": "ttlight", 
             "Group": "t#bar{t} + light", 
             "Type": "BACKGROUND",
-            "Selection": "(HF_SimpleClassification == 0) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))"
+            "Selection": "(HF_SimpleClassification == 0) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))",
+	    "MCweight": "1.0-0.5*(mcChannelNumber==410470 && randomRunNumber>340453)"
         }, 
         {
             "NtupleFiles": ["tt_PP8_mc16a","tt_PP8_mc16d","tt_PP8_mc16e","tt_PP8filtered_mc16a","tt_PP8filtered_mc16d","tt_PP8filtered_mc16e"],
             "Name": "ttc",
             "Group": "t#bar{t} + #geq1c", 
             "Type": "BACKGROUND",
-            "Selection": "(HF_SimpleClassification == -1) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))"
+            "Selection": "(HF_SimpleClassification == -1) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))",
+	    "MCweight": "1.0-0.5*(mcChannelNumber==410470 && randomRunNumber>340453)"
         }, 
         {
             "NtupleFiles": ["tt_PP8_mc16a","tt_PP8_mc16d","tt_PP8_mc16e","tt_PP8filtered_mc16a","tt_PP8filtered_mc16d","tt_PP8filtered_mc16e"],
             "Name": "ttb", 
             "Group": "t#bar{t} + #geq1b", 
             "Type": "BACKGROUND",
-            "Selection": "(HF_SimpleClassification == 1) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))"
+            "Selection": "(HF_SimpleClassification == 1) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))",
+	    "MCweight": "1.0-0.5*(mcChannelNumber==410470 && randomRunNumber>340453)"
         },
 	{
-            "NtupleFiles": ["db_mc16a","db_mc16d","db_mc16e","wjets_mc16a","wjets_mc16d","wjets_mc16e","zjets_mc16a","zjets_mc16d","zjets_mc16e"],
-            "Name": "bosonic", 
+            "NtupleFiles": ["db_mc16a","db_mc16d","db_mc16e"],
+            "Name": "diboson", 
+            "Type": "BACKGROUND"
+        },
+	{
+            "NtupleFiles": ["zjets_mc16a","zjets_mc16d","zjets_mc16e"],
+            "Name": "zjets", 
             "Type": "BACKGROUND"
         },
 	{

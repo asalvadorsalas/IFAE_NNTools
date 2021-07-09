@@ -14,7 +14,7 @@ Wh.getGeneralSettings(configfile)
 samples = [] 
 for i in ["250","300","350","400","500","600","700","800","900","1000","1200","1400","1600","1800","2000","2500","3000"]:
     samples+=["Hp"+i]
-samples+=["ttb","ttc","ttlight","othertop","st_tchan","st_wchan","ttH","ttW"]
+samples+=["ttb","ttc","ttlight","diboson","zjets","othertop","st_tchan","st_wchan","ttH","ttW"]
 Wh.readData(regions=["6jin4bin"],samples=samples)
 Wh.df_mc.reset_index(inplace=True)
-Wh.df_mc.to_feather("pandas_Wh_v1_6jin4bin.feather")
+Wh.df_mc.to_feather("pandas_Wh_v2_6jin4bin.feather")
