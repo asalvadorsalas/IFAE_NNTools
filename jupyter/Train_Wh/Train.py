@@ -131,7 +131,7 @@ for i in range(0,2):
 print("Shape of training, validation and test datasets",X_sets[0].shape,X_sets[1].shape,X_sets[2].shape)
 
 modelNN=FeedForwardModel(configuration=structure,dropout=dropout,verbose=verbose, input_dim=X_sets[0].shape[1],learningr=learningrate)
-resultNN=modelNN.train(X_sets[0], y_sets[0], w_sets[0],(X_sets[1], y_sets[1], w_sets[1]),batch_size = bsize, epochs=300,patience=5,callbacks=getCallbacks(modelNN))
+resultNN=modelNN.train(X_sets[0], y_sets[0], w_sets[0],(X_sets[1], y_sets[1], w_sets[1]),batch_size = bsize, epochs=300,patience=5)
 print(resultNN)
 arch_file=open(outputdir+'/architecture_'+str(ifold)+'.h5','w') #save architecture for analysis framework
 arch_file.write(modelNN.model.to_json())

@@ -105,12 +105,11 @@ class FeedForwardModel():
         """
 
         if callbacks is None:
-            self.callbacks.append(EarlyStopping(monitor='val_loss', 
-                                                patience=patience))
-            self.callbacks.append(ModelCheckpoint(filepath='model_nn_'+str(self.configuration)+"_dropout"+str(self.dropout)+"_l2threshold"+str(self.l2threshold)+".hdf5", 
-                                                  monitor='val_loss',
-                                                  save_best_only=True))
-            self.callbacks.append(RocCallback(training_data=trainData,validation_data=testData))
+            self.callbacks.append(EarlyStopping(monitor='val_loss', patience=patience, restore_best_weights=True))
+            #self.callbacks.append(ModelCheckpoint(filepath='model_nn_'+str(self.configuration)+"_dropout"+str(self.dropout)+"_l2threshold"+str(self.l2threshold)+".hdf5", 
+            #                                      monitor='val_loss',
+            #                                      save_best_only=True))
+            #self.callbacks.append(RocCallback(training_data=trainData,validation_data=testData))
         else:
             self.callbacks=callbacks
 
