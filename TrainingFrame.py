@@ -89,9 +89,11 @@ class TrainingFrame:
         
         trainset = np.where( (split_series==ifold%5) | (split_series==(ifold+1)%5) | (split_series==(ifold+2)%5) )[0]
         valset   = np.where( split_series==(ifold+3)%5 )[0]
-        #trainset = np.where( split_series==ifold )[0]
-        #valset   = np.where( split_series==ifold+1 )[0]
         testset  = np.where( split_series==(ifold+4)%5 )[0]
+        
+        #trainset = np.where( split_series==ifold%2 )[0]
+        #valset   = np.where( split_series==(ifold+1)%2 )[0]
+        #testset  = np.where( split_series==(ifold+99) )[0]        
         
         rng = check_random_state(self.random_state)
         rng.shuffle(trainset)

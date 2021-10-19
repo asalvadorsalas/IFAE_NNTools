@@ -31,7 +31,7 @@ class WeightedStandardScaler():
         self.var_ = variance(X,weights=w)
         self.scale_ = np.sqrt(self.var_)
     
-    def transform(self, X, y, w):
+    def transform(self, X, y, w,verbose=False):
         """
         Performs standarization by centering and scaling features
         X: feature matrix
@@ -40,12 +40,10 @@ class WeightedStandardScaler():
         """
         
         X -= self.mean_
-        print(X)
         X /= self.scale_
-        print(X)
         
         nonzerovariance = np.where(self.scale_!=0)[0]
-        print("Non zero variance columns!",X.shape,nonzerovariance)
+        if verbose: print("Non zero variance columns!",X.shape,nonzerovariance)
         return X.iloc[:,nonzerovariance],y,w
     
     def export(self, X, y, w, path, classlabel):
