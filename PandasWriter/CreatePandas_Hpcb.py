@@ -2,7 +2,7 @@
 from __future__ import print_function
 from HpcbData import *
 
-configfile = 'pandasconfig_Hpcb_eval.json'
+configfile = 'pandasconfig_Hpcb.json'
 Hpcb = HpcbAnalysis()
 
 Hpcb.lumiscale = 139000.0
@@ -15,9 +15,9 @@ Hpcb.feature_names+=["nomWeight_weight_btag","nomWeight_weight_jvt","nomWeight_w
 
 Hpcb.getGeneralSettings(configfile)
 samples = [] 
-for i in ["60","70","80","90","100","110","120","130","140","150"]:
+for i in ["60","70","80","90","100","110","120","130","140","150","160"]:
     samples+=["Hp"+i]
-samples+=["ttb","ttc","ttbarlight","Wtocb","Singletop","topEW","ttH","Wjets","Zjets","Dibosons","tH"]
+samples+=["ttb","ttc","ttbarlight","Wtocb","Singletop","topEW","ttH","Wjetslight","Zjetslight","Dibosons","tH","ttH"]
 Hpcb.readData(samples=samples)
 Hpcb.df_mc.reset_index(inplace=True)
-Hpcb.df_mc.to_feather("pandas_Hpcb_v3.feather")
+Hpcb.df_mc.to_feather("pandas_Hpcb_v4.feather")
