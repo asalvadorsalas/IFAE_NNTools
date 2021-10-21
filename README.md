@@ -75,11 +75,13 @@ Create a kernel from scratch
 
 _if there is anything wrong with this setup tell me_
   
-Download the branch
+Download
 ======
 
 Go to your desired workspace and,
 
 `git clone https://github.com/asalvadorsalas/IFAE_NNTools.git`
 
-The notebooks in the jupyter folder are documented working examples for different analysis. Feel to copy the jupyter/Train_tqX/Tutorial.ipynb in your working directory. Feel free to execute all the cells but there is risk of using too much memory (keras has memory leaks when training) if you train and evaluate in the kernel instance. The "user" has to be changed in the first cell.
+The notebooks in the jupyter folder are documented working examples for different analysis. 
+
+Feel free to copy the jupyter/Train_tqX/Tutorial.ipynb in your working directory and execute all the cells one by one. There is risk of using too much memory (keras has memory leaks when training) if you train and evaluate in the same kernel instance. The "user" has to be changed in the first cell.
