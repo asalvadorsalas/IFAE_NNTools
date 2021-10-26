@@ -15,7 +15,7 @@ Install/use our centralised kernel
     
     Conda is the friendly python environment that takes care of installing properly the compatible packages for you.
     
-    `source source /nfs/pic.es/user/s/salvador/conda_setup.sh`
+    `source /nfs/pic.es/user/s/salvador/conda_setup.sh`
 
 2. Activate the centralised environment (you can deactivate it with `source deactivate`)
 
@@ -39,7 +39,7 @@ Create a kernel from scratch
     
     Conda is the friendly python environment that takes care of installing properly the compatible packages for you.
     
-    `source source /nfs/pic.es/user/s/salvador/conda_setup.sh`
+    `source /nfs/pic.es/user/s/salvador/conda_setup.sh`
 
 2. Create local conda environment
     
