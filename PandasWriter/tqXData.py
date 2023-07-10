@@ -2,7 +2,7 @@ from __future__ import print_function
 import json,os
 import pandas as pd
 from root_pandas import read_root
-
+import copy
 def getRWstring(rw_str,reg):
     rw_str = rw_str.replace("#","4j") if "4jex" in reg["Name"] else \
              rw_str.replace("#","5j") if "5jex" in reg["Name"] else \
@@ -88,18 +88,42 @@ class tqXAnalysis:
                                     datafiles.append(datafile)
                         #get the data frame from the root file
                         #columns=self.feature_names+["eventNumber"]
-                        columns = self.feature_names
+                        columns = copy.copy(self.feature_names) 
+                        torename = []
+                        todelete = []
+                        for ifeat in columns:
+                            if ":" in ifeat:
+                                todelete.append(ifeat)
+                                if "sys" in ifeat.split(":")[0] and ("_alt_" in sample['Name'] or "data" in sample['Name']):
+                                    continue
+                                torename.append(ifeat.split(":"))
+                                columns.append("noexpand:"+torename[-1][1])
+                            if ";" in ifeat:
+                                print("found",ifeat)
+                                todelete.append(ifeat)
+                                if "sys" in ifeat.split(";")[0] and ("_alt_" in sample['Name'] or "data" in sample['Name']):
+                                    continue
+                                torename.append(ifeat.split(";"))
+                                columns.append(torename[-1][1])
+                        for ifeat in todelete:
+                            columns.remove(ifeat)
+                            print(ifeat,"deleted")
                         if self.lumiscale!=1.:
                             mcweight=mcweight+"*"+str(self.lumiscale)
                         if RW!="":
                             mcweight=mcweight+"*"+RW
                         if sample['Name']!='data':
                             columns=columns+["noexpand:"+mcweight] 
-                                          
-                        print("Reading:",datafiles,self.treename,columns,selection,mcweight)
+                        
+                        print("Reading:")
+                        print(sample['Name'],datafiles,self.treename,columns,selection,mcweight)
                         tmpdf = read_root(datafiles,self.treename,columns=columns,where=selection)
                         print("read")
                         tmpdf.rename(columns={mcweight: 'weight'}, inplace=True)
+                        if len(torename)!=0:
+                            for newname,var in torename:
+                                tmpdf.rename(columns={var:newname}, inplace=True)
+                        print(tmpdf.columns.unique())
                         tmpdf["process"] = sample['Name']
                         #if not "Group" in sample:
                         #    tmpdf["group"]=sample['Name']

@@ -1,170 +1,160 @@
 {
     "Region": [
         {
-            "Selection": "nJets==5&&nBTags_DL1r_77==3",
-            "Name": "5jex3bex" 
-        }, 
-        {
-            "Selection": "nJets==5&&nBTags_DL1r_77>=4",
-            "Name": "5jex4bin" 
-        },
-        {
-            "Selection": "nJets>=6&&nBTags_DL1r_77==3",
-            "Name": "6jin3bex" 
-        }, 
-        {
             "Selection": "nJets>=6&&nBTags_DL1r_77>=4",
             "Name": "6jin4bin" 
         }
     ], 
     "Sample": [
-        {
-            "NtupleFiles": ["tt_PP8_mc16a","tt_PP8_mc16d","tt_PP8_mc16e","tt_PP8filtered_mc16a","tt_PP8filtered_mc16d","tt_PP8filtered_mc16e"],
+	{
+            "NtupleFiles": ["00.6ji3bi.tt_PP8_mc16a","00.6ji3bi.tt_PP8_mc16d","00.6ji3bi.tt_PP8_mc16e","00.6ji3bi.tt_PP8filtered_mc16a","00.6ji3bi.tt_PP8filtered_mc16d","00.6ji3bi.tt_PP8filtered_mc16e"],
             "Name": "ttlight", 
             "Group": "t#bar{t} + light", 
             "Type": "BACKGROUND",
-            "Selection": "(HF_SimpleClassification == 0) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))",
-	    "MCweight": "1.0-0.5*(mcChannelNumber==410470 && randomRunNumber>340453)"
+            "Selection": "(HF_SimpleClassification == 0) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))"
         }, 
         {
-            "NtupleFiles": ["tt_PP8_mc16a","tt_PP8_mc16d","tt_PP8_mc16e","tt_PP8filtered_mc16a","tt_PP8filtered_mc16d","tt_PP8filtered_mc16e"],
+            "NtupleFiles": ["00.6ji3bi.tt_PP8_mc16a","00.6ji3bi.tt_PP8_mc16d","00.6ji3bi.tt_PP8_mc16e","00.6ji3bi.tt_PP8filtered_mc16a","00.6ji3bi.tt_PP8filtered_mc16d","00.6ji3bi.tt_PP8filtered_mc16e"],
             "Name": "ttc",
             "Group": "t#bar{t} + #geq1c", 
             "Type": "BACKGROUND",
-            "Selection": "(HF_SimpleClassification == -1) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))",
-	    "MCweight": "1.0-0.5*(mcChannelNumber==410470 && randomRunNumber>340453)"
+            "Selection": "(HF_SimpleClassification == -1) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))"
         }, 
         {
-            "NtupleFiles": ["tt_PP8_mc16a","tt_PP8_mc16d","tt_PP8_mc16e","tt_PP8filtered_mc16a","tt_PP8filtered_mc16d","tt_PP8filtered_mc16e"],
+            "NtupleFiles": ["00.6ji3bi.tt_PP8_mc16a","00.6ji3bi.tt_PP8_mc16d","00.6ji3bi.tt_PP8_mc16e","00.6ji3bi.tt_PP8filtered_mc16a","00.6ji3bi.tt_PP8filtered_mc16d","00.6ji3bi.tt_PP8filtered_mc16e"],
             "Name": "ttb", 
             "Group": "t#bar{t} + #geq1b", 
             "Type": "BACKGROUND",
-            "Selection": "(HF_SimpleClassification == 1) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))",
-	    "MCweight": "1.0-0.5*(mcChannelNumber==410470 && randomRunNumber>340453)"
+            "Selection": "(HF_SimpleClassification == 1) && (((mcChannelNumber==410470) && (TopHeavyFlavorFilterFlag==0)) || ((mcChannelNumber==411073 || mcChannelNumber==411076) && (TopHeavyFlavorFilterFlag==1)) || ((mcChannelNumber==411074 || mcChannelNumber==411077) && (TopHeavyFlavorFilterFlag==2)) || ((mcChannelNumber==411075 || mcChannelNumber==411078) && (TopHeavyFlavorFilterFlag==3)))"
         },
 	{
-            "NtupleFiles": ["db_mc16a","db_mc16d","db_mc16e"],
+            "NtupleFiles": ["00.6ji3bi.db_mc16a","00.6ji3bi.db_mc16d","00.6ji3bi.db_mc16e"],
             "Name": "diboson", 
             "Type": "BACKGROUND"
         },
 	{
-            "NtupleFiles": ["zjets_mc16a","zjets_mc16d","zjets_mc16e"],
+            "NtupleFiles": ["00.6ji3bi.zjets_mc16a","00.6ji3bi.zjets_mc16d","00.6ji3bi.zjets_mc16e"],
             "Name": "zjets", 
             "Type": "BACKGROUND"
         },
 	{
-            "NtupleFiles": ["st_sc_mc16a","st_sc_mc16d","st_sc_mc16e","tZ_mc16a","tZ_mc16d","tZ_mc16e","tH_mc16a_AFII","tH_mc16d_AFII","tH_mc16e_AFII","ttll_mc16a","ttll_mc16d","ttll_mc16e","tWZ_mc16a","tWZ_mc16d","tWZ_mc16e"],
+            "NtupleFiles": ["00.6ji3bi.wjets_mc16a","00.6ji3bi.wjets_mc16d","00.6ji3bi.wjets_mc16e"],
+            "Name": "wjets", 
+            "Type": "BACKGROUND"
+        },
+	{
+            "NtupleFiles": ["00.6ji3bi.st_sc_mc16a","00.6ji3bi.st_sc_mc16d","00.6ji3bi.st_sc_mc16e","00.6ji3bi.tZ_mc16a","00.6ji3bi.tZ_mc16d","00.6ji3bi.tZ_mc16e","00.6ji3bi.tH_mc16a_AFII","00.6ji3bi.tH_mc16d_AFII","00.6ji3bi.tH_mc16e_AFII","00.6ji3bi.ttll_mc16a","00.6ji3bi.ttll_mc16d","00.6ji3bi.ttll_mc16e","00.6ji3bi.tWZ_mc16a","00.6ji3bi.tWZ_mc16d","00.6ji3bi.tWZ_mc16e","00.6ji3bi.tttt_mc16a_AFII","00.6ji3bi.tttt_mc16d_AFII","00.6ji3bi.tttt_mc16e_AFII"],
             "Name": "othertop", 
             "Type": "BACKGROUND"
         },
 	{
-            "NtupleFiles": ["st_tc_mc16a","st_tc_mc16d","st_tc_mc16e"],
+            "NtupleFiles": ["00.6ji3bi.st_tc_mc16a","00.6ji3bi.st_tc_mc16d","00.6ji3bi.st_tc_mc16e"],
             "Name": "st_tchan", 
             "Type": "BACKGROUND"
         },
 	{
-            "NtupleFiles": ["Wt_mc16a","Wt_mc16d","Wt_mc16e"],
+            "NtupleFiles": ["00.6ji3bi.Wt_mc16a","00.6ji3bi.Wt_mc16d","00.6ji3bi.Wt_mc16e"],
             "Name": "st_wchan", 
             "Type": "BACKGROUND"
         },
 	{
-            "NtupleFiles": ["ttH_PP8_mc16a","ttH_PP8_mc16d","ttH_PP8_mc16e"],
+            "NtupleFiles": ["00.6ji3bi.ttH_PP8_mc16a","00.6ji3bi.ttH_PP8_mc16d","00.6ji3bi.ttH_PP8_mc16e"],
             "Name": "ttH", 
             "Type": "BACKGROUND"
         },
 	{
-            "NtupleFiles": ["ttW_mc16a","ttW_mc16d","ttW_mc16e"],
+            "NtupleFiles": ["00.6ji3bi.ttW_mc16a","00.6ji3bi.ttW_mc16d","00.6ji3bi.ttW_mc16e"],
             "Name": "ttW", 
             "Type": "BACKGROUND"
         },
         {
-            "NtupleFiles": ["hp250_mc16a_AFII","hp250_mc16d_AFII","hp250_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp250_mc16a_AFII","00.6ji3bi.hp250_mc16d_AFII","00.6ji3bi.hp250_mc16e_AFII"],
             "Name": "Hp250",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp300_mc16a_AFII","hp300_mc16d_AFII","hp300_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp300_mc16a_AFII","00.6ji3bi.hp300_mc16d_AFII","00.6ji3bi.hp300_mc16e_AFII"],
             "Name": "Hp300",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp350_mc16a_AFII","hp350_mc16d_AFII","hp350_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp350_mc16a_AFII","00.6ji3bi.hp350_mc16d_AFII","00.6ji3bi.hp350_mc16e_AFII"],
             "Name": "Hp350",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp400_mc16a_AFII","hp400_mc16d_AFII","hp400_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp400_mc16a_AFII","00.6ji3bi.hp400_mc16d_AFII","00.6ji3bi.hp400_mc16e_AFII"],
             "Name": "Hp400",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp500_mc16a_AFII","hp500_mc16d_AFII","hp500_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp500_mc16a_AFII","00.6ji3bi.hp500_mc16d_AFII","00.6ji3bi.hp500_mc16e_AFII"],
             "Name": "Hp500",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp600_mc16a_AFII","hp600_mc16d_AFII","hp600_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp600_mc16a_AFII","00.6ji3bi.hp600_mc16d_AFII","00.6ji3bi.hp600_mc16e_AFII"],
             "Name": "Hp600",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp700_mc16a_AFII","hp700_mc16d_AFII","hp700_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp700_mc16a_AFII","00.6ji3bi.hp700_mc16d_AFII","00.6ji3bi.hp700_mc16e_AFII"],
             "Name": "Hp700",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp800_mc16a_AFII","hp800_mc16d_AFII","hp800_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp800_mc16a_AFII","00.6ji3bi.hp800_mc16d_AFII","00.6ji3bi.hp800_mc16e_AFII"],
             "Name": "Hp800",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp900_mc16a_AFII","hp900_mc16d_AFII","hp900_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp900_mc16a_AFII","00.6ji3bi.hp900_mc16d_AFII","00.6ji3bi.hp900_mc16e_AFII"],
             "Name": "Hp900",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp1000_mc16a_AFII","hp1000_mc16d_AFII","hp1000_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp1000_mc16a_AFII","00.6ji3bi.hp1000_mc16d_AFII","00.6ji3bi.hp1000_mc16e_AFII"],
             "Name": "Hp1000",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp1200_mc16a_AFII","hp1200_mc16d_AFII","hp1200_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp1200_mc16a_AFII","00.6ji3bi.hp1200_mc16d_AFII","00.6ji3bi.hp1200_mc16e_AFII"],
             "Name": "Hp1200",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp1400_mc16a_AFII","hp1400_mc16d_AFII","hp1400_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp1400_mc16a_AFII","00.6ji3bi.hp1400_mc16d_AFII","00.6ji3bi.hp1400_mc16e_AFII"],
             "Name": "Hp1400",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp1600_mc16a_AFII","hp1600_mc16d_AFII","hp1600_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp1600_mc16a_AFII","00.6ji3bi.hp1600_mc16d_AFII","00.6ji3bi.hp1600_mc16e_AFII"],
             "Name": "Hp1600",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp1800_mc16a_AFII","hp1800_mc16d_AFII","hp1800_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp1800_mc16a_AFII","00.6ji3bi.hp1800_mc16d_AFII","00.6ji3bi.hp1800_mc16e_AFII"],
             "Name": "Hp1800",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp2000_mc16a_AFII","hp2000_mc16d_AFII","hp2000_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp2000_mc16a_AFII","00.6ji3bi.hp2000_mc16d_AFII","00.6ji3bi.hp2000_mc16e_AFII"],
             "Name": "Hp2000",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp2500_mc16a_AFII","hp2500_mc16d_AFII","hp2500_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp2500_mc16a_AFII","00.6ji3bi.hp2500_mc16d_AFII","00.6ji3bi.hp2500_mc16e_AFII"],
             "Name": "Hp2500",
             "Type": "SIGNAL"
         },
         {
-            "NtupleFiles": ["hp3000_mc16a_AFII","hp3000_mc16d_AFII","hp3000_mc16e_AFII"],
+            "NtupleFiles": ["00.6ji3bi.hp3000_mc16a_AFII","00.6ji3bi.hp3000_mc16d_AFII","00.6ji3bi.hp3000_mc16e_AFII"],
             "Name": "Hp3000",
             "Type": "SIGNAL"
         }
     ], 
     "Job": {
-        "NtuplePaths": "/nfs/at3/scratch/salvador/HplusWH/runtest/Output_t_00/4ji2bi", 
+        "NtuplePaths": "/data/at3/scratch/salvador/HplusWH/runL2oct2021/HpWhL2Output_v1_00",
         "NtupleName": "nominal_Loose", 
 	    "MCweight": "weight_normalise*weight_pileup*weight_mc*weight_leptonSF*weight_bTagSF_DL1r_Continuous*weight_jvt*(randomRunNumber<=311481 ? 36207.66 : (randomRunNumber<=340453 ? 44307.4 : 58450.1))*(ejets_2015_DL1r==1 || ejets_2016_DL1r==1 || ejets_2017_DL1r==1 || ejets_2018_DL1r==1 || mujets_2015_DL1r==1 || mujets_2016_DL1r==1 || mujets_2017_DL1r==1 || mujets_2018_DL1r==1)"
     }

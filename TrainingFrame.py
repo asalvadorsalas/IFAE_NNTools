@@ -87,6 +87,10 @@ class TrainingFrame:
         features, classes, weights = self.get_features_classes_weights(region,masses,addmass,absoluteWeight)
         split_series = self.pandasframe[self.mask][self.foldvar]%5  #self.get_split_series(classes.shape[0])
         
+        #trainset = np.where( (split_series==ifold%5) | (split_series==(ifold+1)%5) | (split_series==(ifold+2)%5) )[0]
+        #valset   = np.where( (split_series==(ifold+3)%5) | (split_series==(ifold+4)%5) )[0]
+        #testset  = np.where( split_series==(ifold+99)%5 )[0]
+        
         trainset = np.where( (split_series==ifold%5) | (split_series==(ifold+1)%5) | (split_series==(ifold+2)%5) )[0]
         valset   = np.where( split_series==(ifold+3)%5 )[0]
         testset  = np.where( split_series==(ifold+4)%5 )[0]

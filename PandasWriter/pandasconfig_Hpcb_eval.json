@@ -1,0 +1,161 @@
+{
+    "Region": [
+        {
+            "Selection": "jets_n==4&&bjets_n==3",
+            "Name": "c1l4jex3bex" 
+        }, 
+        {
+            "Selection": "jets_n==4&&bjets_n==4",
+            "Name": "c1l4jex4bin" 
+        },
+        {
+            "Selection": "jets_n==5&&bjets_n==3",
+            "Name": "c1l5jex3bex" 
+        },
+        {
+            "Selection": "jets_n==5&&bjets_n>=4",
+            "Name": "c1l5jex4bin"
+        },
+        {
+            "Selection": "jets_n==6&&bjets_n==3",
+            "Name": "c1l6jex3bex" 
+        },
+        {
+            "Selection": "jets_n==6&&bjets_n>=4",
+            "Name": "c1l6jex4bin"
+        },
+        {
+            "Selection": "jets_n>=7&&bjets_n==3",
+            "Name": "c1l7jin3bex" 
+        },
+        {
+            "Selection": "jets_n>=7&&bjets_n>=4",
+            "Name": "c1l7jin4bin"
+        } 
+    ], 
+    "Sample": [
+        {
+            "NtupleFiles": ["ttbarlight"],
+            "Name": "ttbarlight", 
+            "Group": "t#bar{t} + light", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        }, 
+        {
+            "NtupleFiles": ["ttbarcc"],
+            "Name": "ttc",
+            "Group": "t#bar{t} + #geq1c", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        }, 
+        {
+            "NtupleFiles": ["ttbarbb"],
+            "Name": "ttb", 
+            "Group": "t#bar{t} + #geq1b", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["Wtocb"],
+            "Name": "Wtocb", 
+            "Group": "W#rightarrowcb", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["Singletop"],
+            "Name": "Singletop", 
+            "Type": "BACKGROUND"
+        },
+        {
+            "NtupleFiles": ["topEW"],
+            "Name": "topEW", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["ttH"],
+            "Name": "ttH", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["ttHtH"],
+            "Name": "tH", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["Wjets"],
+            "Name": "Wjets", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["Zjets"],
+            "Name": "Zjets", 
+            "Type": "BACKGROUND"
+        },
+        {
+            "NtupleFiles": ["Dibosons"],
+            "Name": "Dibosons", 
+            "Type": "BACKGROUND"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_60"],
+            "Name": "Hp60",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_70"],
+            "Name": "Hp70",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_80"],
+            "Name": "Hp80",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_90"],
+            "Name": "Hp90",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_100"],
+            "Name": "Hp100",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_110"],
+            "Name": "Hp110",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_120"],
+            "Name": "Hp120",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_130"],
+            "Name": "Hp130",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_140"],
+            "Name": "Hp140",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_150"],
+            "Name": "Hp150",
+            "Type": "SIGNAL"
+        },
+        {
+            "NtupleFiles": ["Hpluscb_160"],
+            "Name": "Hp160",
+            "Type": "SIGNAL"
+        }
+    ], 
+    "Job": {
+        "NtuplePaths": "/nfs/at3/scratch/salvador/IFAE-tXq/L2Ntuples",
+        "NtupleName": "tree", 
+	    "MCweight": "nomWeight_weight_btag*nomWeight_weight_jvt*nomWeight_weight_leptonSF*nomWeight_weight_mc*nomWeight_weight_norm*nomWeight_weight_pu"
+    }
+}

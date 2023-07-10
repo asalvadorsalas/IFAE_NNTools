@@ -1,0 +1,470 @@
+{
+    "Region": [
+        {
+            "Selection": "jets_n==4&&bjets_n==3",
+            "Name": "c1l4jex3bex" 
+        }, 
+        {
+            "Selection": "jets_n==4&&bjets_n==4",
+            "Name": "c1l4jex4bin" 
+        },
+        {
+            "Selection": "jets_n==5&&bjets_n==3",
+            "Name": "c1l5jex3bex" 
+        },
+        {
+            "Selection": "jets_n==5&&bjets_n>=4",
+            "Name": "c1l5jex4bin"
+        },
+        {
+            "Selection": "jets_n==6&&bjets_n==3",
+            "Name": "c1l6jex3bex" 
+        },
+        {
+            "Selection": "jets_n==6&&bjets_n>=4",
+            "Name": "c1l6jex4bin"
+        }
+    ], 
+    "Sample": [
+	{   "NtupleFiles": ["Data"],
+	    "Name": "data",
+	    "Type": "DATA"
+	},
+        {
+            "NtupleFiles": ["uS_S20"],
+            "Name": "uX_20",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S20"],
+            "Name": "ubarX_20",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S20"],
+            "Name": "cX_20",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S20"],
+            "Name": "cbarX_20",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S30"],
+            "Name": "uX_30",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S30"],
+            "Name": "ubarX_30",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S30"],
+            "Name": "cX_30",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S30"],
+            "Name": "cbarX_30",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S40"],
+            "Name": "uX_40",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S40"],
+            "Name": "ubarX_40",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S40"],
+            "Name": "cX_40",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S40"],
+            "Name": "cbarX_40",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S50"],
+            "Name": "uX_50",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S50"],
+            "Name": "ubarX_50",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S50"],
+            "Name": "cX_50",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S50"],
+            "Name": "cbarX_50",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S60"],
+            "Name": "uX_60",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S60"],
+            "Name": "ubarX_60",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S60"],
+            "Name": "cX_60",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S60"],
+            "Name": "cbarX_60",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S70"],
+            "Name": "uX_70",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S70"],
+            "Name": "ubarX_70",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S70"],
+            "Name": "cX_70",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S70"],
+            "Name": "cbarX_70",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S80"],
+            "Name": "uX_80",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S80"],
+            "Name": "ubarX_80",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S80"],
+            "Name": "cX_80",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S80"],
+            "Name": "cbarX_80",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S90"],
+            "Name": "uX_90",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S90"],
+            "Name": "ubarX_90",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S90"],
+            "Name": "cX_90",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S90"],
+            "Name": "cbarX_90",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S100"],
+            "Name": "uX_100",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S100"],
+            "Name": "ubarX_100",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S100"],
+            "Name": "cX_100",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S100"],
+            "Name": "cbarX_100",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S120"],
+            "Name": "uX_120",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S120"],
+            "Name": "ubarX_120",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S120"],
+            "Name": "cX_120",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S120"],
+            "Name": "cbarX_120",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S140"],
+            "Name": "uX_140",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S140"],
+            "Name": "ubarX_140",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S140"],
+            "Name": "cX_140",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S140"],
+            "Name": "cbarX_140",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S150"],
+            "Name": "uX_150",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S150"],
+            "Name": "ubarX_150",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S150"],
+            "Name": "cX_150",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S150"],
+            "Name": "cbarX_150",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },        {
+            "NtupleFiles": ["uS_S160"],
+            "Name": "uX_160",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ubarS_S160"],
+            "Name": "ubarX_160",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cS_S160"],
+            "Name": "cX_160",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["cbarS_S160"],
+            "Name": "cbarX_160",
+            "Type": "SIGNAL",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["ttbarlight"],
+            "Name": "ttbarlight", 
+            "Group": "t#bar{t} + light", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        }, 
+        {
+            "NtupleFiles": ["ttbarcc"],
+            "Name": "ttc",
+            "Group": "t#bar{t} + #geq1c", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        }, 
+        {
+            "NtupleFiles": ["ttbarbb"],
+            "Name": "ttb", 
+            "Group": "t#bar{t} + #geq1b", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["Wtocb"],
+            "Name": "Wtocb", 
+            "Group": "W#rightarrowcb", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#"
+        },
+        {
+            "NtupleFiles": ["Singletop"],
+            "Name": "Singletop", 
+            "Type": "BACKGROUND"
+        },
+        {
+            "NtupleFiles": ["topEW"],
+            "Name": "topEW", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["topEWtZ"],
+            "Name": "topEWtZ", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["ttH"],
+            "Name": "ttH", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["ttHtH"],
+            "Name": "tH", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["Wjets22light"],
+            "Name": "Wjets", 
+            "Type": "BACKGROUND"
+        }, 
+        {
+            "NtupleFiles": ["Zjets22light"],
+            "Name": "Zjets", 
+            "Type": "BACKGROUND"
+        },
+        {
+            "NtupleFiles": ["Dibosons"],
+            "Name": "Dibosons", 
+            "Type": "BACKGROUND"
+        },
+        {
+            "NtupleFiles": ["ttbarbbPowP8_ttbb"],
+            "Name": "ttb_alt_4FS", 
+            "Group": "t#bar{t} + #geq1b alt", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "1.03608107203664*branch_rew_func_#/branch_rew_func_#_PP8"
+        },
+        {
+            "NtupleFiles": ["ttbarbbPowH7"],
+            "Name": "ttb_alt_H7", 
+            "Group": "t#bar{t} + #geq1b alt", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "1.2396256232467*branch_rew_func_#/branch_rew_func_#_PowH7"
+        },
+        {
+            "NtupleFiles": ["ttbarccPowH7"],
+            "Name": "ttc_alt_H7", 
+            "Group": "t#bar{t} + #geq1c alt", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "1.42763791422693*branch_rew_func_#/branch_rew_func_#_PowH7"
+        },
+        {
+            "NtupleFiles": ["ttbarlightPowH7"],
+            "Name": "ttbarlight_alt_H7", 
+            "Group": "t#bar{t} + light alt", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "0.930164118108168*branch_rew_func_#/branch_rew_func_#_PowH7"
+        },
+        {
+            "NtupleFiles": ["WtocbPowH7"],
+            "Name": "Wtocb_alt_H7", 
+            "Group": "W#rightarrowcb alt", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "branch_rew_func_#/branch_rew_func_#_PowH7"
+        },
+        {
+            "NtupleFiles": ["ttbarbbnoShWMCPy8"],
+            "Name": "ttb_alt_NLO", 
+            "Group": "t#bar{t} + #geq1b alt", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "0.996430236975628*branch_rew_func_#/branch_rew_func_#_noShWMCPy8"
+        },
+        {
+            "NtupleFiles": ["ttbarccnoShWMCPy8"],
+            "Name": "ttc_alt_NLO", 
+            "Group": "t#bar{t} + #geq1c alt", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "1.0428619216409*branch_rew_func_#/branch_rew_func_#_noShWMCPy8"
+        },
+        {
+            "NtupleFiles": ["ttbarlightnoShWMCPy8"],
+            "Name": "ttbarlight_alt_NLO", 
+            "Group": "t#bar{t} + light alt", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "1.04309424809379*branch_rew_func_#/branch_rew_func_#_noShWMCPy8"
+        },
+        {
+            "NtupleFiles": ["WtocbnoShWMCPy8"],
+            "Name": "Wtocb_alt_NLO", 
+            "Group": "W#rightarrowcb alt", 
+            "Type": "BACKGROUND",
+	    "RWeighting": "2*branch_rew_func_#/branch_rew_func_#_noShWMCPy8"
+        }
+    ], 
+    "Job": {
+        "NtuplePaths": "/data/at3/scratch/salvador/IFAE-tXq/L2Ntuples_v1",
+        "NtupleName": "tree", 
+	    "MCweight": "nomWeight_weight_btag*nomWeight_weight_jvt*nomWeight_weight_leptonSF*nomWeight_weight_mc*nomWeight_weight_norm*nomWeight_weight_pu"
+    }
+}

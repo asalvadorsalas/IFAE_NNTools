@@ -149,6 +149,9 @@ class FeedForwardModel():
   
         epochs=range(1,len(loss_values)+1)
         plt.figure()
+        print("Epochs",epochs)
+        print("Loss",loss_values)
+        print("VLoss",val_loss_values)
         plt.plot(epochs, loss_values, "bo",label="Training loss")
         plt.plot(epochs, val_loss_values, "b",label="Validation loss")
         plt.legend(loc=0)

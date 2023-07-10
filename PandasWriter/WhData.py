@@ -114,6 +114,6 @@ class WhAnalysis:
                             self.df_mc["jet_eta"] = self.df_mc.jet_eta.map(lambda x: x if len(x)<=6 else x[0:6])
                             self.df_mc["jet_e"] = self.df_mc.jet_eta.map(lambda x: x if len(x)<=6 else x[0:6])
                             self.df_mc["jet_phi"] = self.df_mc.jet_phi.map(lambda x: x if len(x)<=6 else x[0:6])
-                            self.df_mc["jet_DL1r"] = self.df_mc.jet_DL1r.map(lambda x: x if len(x)<=6 else x[0:6])
+                            self.df_mc["jet_tagWeightBin_DL1r_Continuous"] = self.df_mc.jet_tagWeightBin_DL1r_Continuous.map(lambda x: x if len(x)<=6 else x[0:6])
 
 
